@@ -1,0 +1,5 @@
+---
+base_profile_d_path:    '{{ user_home_path }}/profile.d'
+base_username:          vagrant
+base_group_name:        '{{ username }}'
+base_user_home_path:    '/home/{{ username }}'

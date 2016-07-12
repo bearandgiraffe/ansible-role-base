@@ -1,0 +1,52 @@
+---
+- name: Update APT package cache
+  apt: update_cache=yes
+
+- name: Install python-apt  (Required by ANSIBLE)
+  apt: name=python-apt
+
+- name: Install packages
+  apt: name={{ item }} state=installed update_cache=yes cache_valid_time=3600
+  with_items:
+    - autoconf
+    - bison
+    - build-essential
+    - curl
+    - default-jre
+    - git
+    - htop
+    - imagemagick
+    - libcurl3
+    - libcurl3-gnutls
+    - libcurl4-openssl-dev
+    - libncurses5-dev
+    - libqt4-dev
+    - libqt4-core
+    - libqt4-gui
+    - libqt5webkit5-dev
+    - libreadline6-dev
+    - libssl-dev
+    - libyaml-dev
+    - mailutils
+    - nodejs
+    - npm
+    - postfix
+    - python-dev
+    - python-pip
+    - redis-server
+    - qt5-default
+    - qt4-dev-tools
+    - zlib1g-dev
+  become: yes
+
+- name: Create application group
+  group: name={{ group_name }}
+
+- name: Create application user
+  user: name={{ username }} group={{ group_name }} shell=/bin/bash home={{ user_home_path }}
+
+- name: Create profile.d directory
+  file: path={{ profile_d_path }} state=directory owner={{ username }} group={{ group_name }}
+
+- name: Create ~/.bash_profile which loads all from ~/profile.d
+  template: src=bash_profile.j2 dest={{ user_home_path }}/.bash_profile owner={{ username }} group={{ group_name }}
