@@ -1,6 +1,6 @@
 galaxy_info:
   author: Youssef Chaker
-  description: Base role for all environments
+  description: Installs all the basics that are usually required by any environment
   company: Bear & Giraffe LLC
 
   license: The Unlicense

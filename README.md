@@ -1,4 +1,4 @@
-Role Name
+Base
 =========
 
 Installs all the basics that are usually required by any environment.
@@ -28,7 +28,7 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 Example Playbook
 ----------------
 
-```
+```yml
 - hosts: servers
   roles:
      - { role: bearandgiraffe.base, base_username: 'foo' }
