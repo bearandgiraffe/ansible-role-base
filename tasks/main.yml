@@ -40,13 +40,13 @@
   become: yes
 
 - name: Create application group
-  group: name={{ group_name }}
+  group: name={{ base_group_name }}
 
 - name: Create application user
-  user: name={{ username }} group={{ group_name }} shell=/bin/bash home={{ user_home_path }}
+  user: name={{ base_username }} group={{ base_group_name }} shell=/bin/bash home={{ base_user_home_path }}
 
 - name: Create profile.d directory
-  file: path={{ profile_d_path }} state=directory owner={{ username }} group={{ group_name }}
+  file: path={{ base_profile_d_path }} state=directory owner={{ base_username }} group={{ base_group_name }}
 
 - name: Create ~/.bash_profile which loads all from ~/profile.d
-  template: src=bash_profile.j2 dest={{ user_home_path }}/.bash_profile owner={{ username }} group={{ group_name }}
+  template: src=bash_profile.j2 dest={{ base_user_home_path }}/.bash_profile owner={{ base_username }} group={{ base_group_name }}

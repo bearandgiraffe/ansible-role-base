@@ -14,10 +14,10 @@ Role Variables
 Available variables are listed below, along with default values:
 
 ```yml
-base_profile_d_path:    '{{ user_home_path }}/profile.d'
 base_username:          vagrant
-base_group_name:        '{{ username }}'
-base_user_home_path:    '/home/{{ username }}'
+base_group_name:        '{{ base_username }}'
+base_user_home_path:    '/home/{{ base_username }}'
+base_profile_d_path:    '{{ base_user_home_path }}/profile.d'
 ```
 
 Dependencies
