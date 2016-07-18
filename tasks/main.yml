@@ -1,4 +1,6 @@
 ---
+- apt_repository: repo='ppa:pi-rho/dev'
+
 - name: Update APT package cache
   apt: update_cache=yes
 
@@ -11,6 +13,7 @@
     - autoconf
     - bison
     - build-essential
+    - cmake
     - curl
     - default-jre
     - git
@@ -19,6 +22,7 @@
     - libcurl3
     - libcurl3-gnutls
     - libcurl4-openssl-dev
+    - libmagickwand-dev
     - libncurses5-dev
     - libqt4-dev
     - libqt4-core
@@ -36,6 +40,7 @@
     - redis-server
     - qt5-default
     - qt4-dev-tools
+    - tmux
     - zlib1g-dev
   become: yes
 
