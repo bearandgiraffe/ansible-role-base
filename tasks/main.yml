@@ -25,8 +25,11 @@
     - libmagickwand-dev
     - libncurses5-dev
     - libqt4-dev
-    - libqt4-core
-    - libqt4-gui
+    - libqt4-designer
+    - libqt4-opengl
+    - libqt4-svg
+    - libqtgui4
+    - libqtwebkit4
     - libqt5webkit5-dev
     - libreadline6-dev
     - libssl-dev
